@@ -1,0 +1,24 @@
+Egadgets 
+--------
+
+-> customer
+- - - - - - -
+
+signup , signup
+view products
+view product details
+add to cart
+view cart list
+remove for cart
+place order
+view orders
+cancel order
+
+-> Admin
+- - - - - 
+
+add projects
+manage product details
+view orders
+change order status
+
