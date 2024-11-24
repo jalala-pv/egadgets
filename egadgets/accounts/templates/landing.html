@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 
 <!doctype html>
 <html lang="en">
@@ -29,19 +29,24 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Edu+QLD+Beginner:wght@400..700&family=Great+Vibes&family=Herr+Von+Muellerhoff&family=Hurricane&family=Mr+Dafoe&family=Pacifico&family=Petemoss&family=Roboto+Slab:wght@100..900&family=Sanchez:ital@0;1&family=Yesteryear&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 
     <body>
-        <div class="row align-items-center p-3" style="height: 100vh;background-color: azure;">
+        <div class="row align-items-center p-3" style="height: 100vh;">
             <div class="col">
-                <img src="https://i.pinimg.com/originals/94/cb/04/94cb04cd8003d3ea9de061cd0272454a.png" alt="" class="img-fluid">
+                <img src="{% static 'landing.png' %}" alt="" class="img-fluid">
 
             </div>
-            <div class="col">
+            <div class="col" id="desc">
                 <h2>Egadgets  
-                    <i class="fa-solid fa-bag-shopping fa-spin fa-lg ml-5" style="color: #0d0d0d;"></i>
-                </h2>
+                    <i class="fa-solid fa-bag-shopping fa-spin fa-lg ml-5" style="color: #fdfdfd;"></i>
+                </h2><br>
                 <h6>A point For Every Gadgets</h6>
                 <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique saepe reprehenderit magni minus, id qui repellat praesentium dicta dignissimos tenetur vel nihil dolor deleniti repudiandae impedit, aspernatur, excepturi nostrum mollitia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae esse deserunt quidem dolores quae, minus voluptas maiores enim a modi quibusdam corporis blanditiis autem debitis sapiente incidunt quis odio quaerat.</p>
                 <a href="{% url 'login' %}" class="btn btn-outline-dark">Explore....</a>

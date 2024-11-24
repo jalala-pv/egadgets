@@ -1,0 +1,18 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+
+<h2>Products</h2>
+<div class="d-flex justify-content-evenly text-center flex-wrap">
+{% for i in products %}
+<div class="card" style="width: 18rem;">
+    <img src="{{i.image.url}}" height="250px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{i.title}}</h5>
+      <p class="card-text">&#8377;{{i.price}}</p>
+      <a href="{% url 'pdetail' i.id %}" class="stretched-link"></a>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock nav %}

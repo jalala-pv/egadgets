@@ -22,3 +22,15 @@ manage product details
 view orders
 change order status
 
+
+
+<!-- {% extends 'navbar.html' %}
+{% block nav %}
+<h2>Cart List</h2>
+{% for i in carts %}
+<p>{{i.product}}</p>
+<p>{{i.quantity}}</p>
+{% endfor %}
+{% endblock nav %} -->
+
+

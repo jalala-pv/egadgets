@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.views import View
 from .forms import *
 from django.contrib import messages
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login
 from django.http import HttpResponse
 from django.views.generic import TemplateView,FormView,CreateView
 from django.urls import reverse_lazy
@@ -45,6 +45,7 @@ class LoginView(FormView):
             pswd=form.cleaned_data.get('password')
             user=authenticate(request,username=uname,password=pswd)
             if user:
+                login(request,user)
                 return redirect('customerhome')
             else:
                 messages.error(request,'Login Failed!!')

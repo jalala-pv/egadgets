@@ -2,62 +2,80 @@
 {% extends 'navbar.html' %}
 {% block nav %}
 {% load static %}
-<h2 class="m-3">Welcome <span></span></h2>
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{% static 'ecom1.png' %}" height="400px" class="d-block w-100" alt="...">
+        <img src="{% static 'ecom9.webp' %}" height="400px" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{% static 'ecom1.png' %}" height="400px" class="d-block w-100" alt="...">
+        <img src="{% static 'ecom6.jpg' %}" height="400px" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{% static 'ecom1.png' %}" height="400px" class="d-block w-100" alt="...">
+        <img src="{% static 'ecom3.jpg' %}" height="400px" class="d-block w-100" alt="...">
+      </div>
+      {% if messages %}
+                    {% for i in messages %}
+                    {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <div class="alert alert-success alert-dismissible fade show">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong>{{i}}</strong>
+                    </div>
+                    {% endif %}
+                    {% if i.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong>{{i}}</strong>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+      <div class="carousel-caption d-none d-md-block">
+        <h2 class="text-light">Welcome <span class="text-warning">{{ request.user.first_name }} {{ request.user.last_name }}</span></h2>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" style="background-color: rgb(196, 211, 130);" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev" >
+       <span id="prev"><img src="{% static 'left-arrow.png' %}" height="12px" alt=""></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" style="background-color: rgb(196, 211, 130);" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next" >
+       <span id="next"><img src="{% static 'right-arrow.png' %}" height="12px" alt=""></span>
     </button>
+    
   </div>
 
-  <h2 class="text-center mt-5">Categories</h2>
+  <h2 class="text-center mt-5" style="font-weight: bold;">Categories</h2>
   <div class="p-2 d-flex justify-content-evenly">
 
     <div class="card" style="width: 18rem;">
-        <img src="{% static 'ecom1.png' %}" class="card-img-top" alt="...">
+        <img src="{% static 'sm4.png' %}" height="250px" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">Smart Phones</h5>
-          <a href="#" class="stretched-link"></a>
+          <a href="{% url 'products' 'SmartPhone' %}" class="stretched-link"></a>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="{% static 'ecom1.png' %}" class="card-img-top" alt="...">
+        <img src="{% static 'l4.png' %}" height="250px" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">Tablets</h5>
-          <a href="#" class="stretched-link"></a>
+          <a href="{% url 'products' 'Tablet' %}" class="stretched-link"></a>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="{% static 'ecom1.png' %}" class="card-img-top" alt="...">
+        <img src="{% static 'sw1.png' %}" height="250px" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">Smart Watch</h5>
-          <a href="#" class="stretched-link"></a>
+          <a href="{% url 'products' 'SmartWatch' %}" class="stretched-link"></a>
         </div>
       </div>
 
       <div class="card" style="width: 18rem;">
-        <img src="{% static 'ecom1.png' %}" class="card-img-top" alt="...">
+        <img src="{% static 'lp1.png' %}" height="250px" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">Laptops</h5>
-          <a href="#" class="stretched-link"></a>
+          <a href="{% url 'products' 'LapTop' %}" class="stretched-link"></a>
         </div>
       </div>
   </div>
