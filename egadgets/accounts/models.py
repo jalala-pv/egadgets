@@ -36,4 +36,6 @@ class Orders(models.Model):
         ('Delivered','Delivered'),
         ('cancelled','cancelled')
     )
-    status=models.CharField(max_length=100,default='OrderPlaced')
+    status=models.CharField(max_length=100,default='OrderPlaced',choices=options)
+    def __str__(self) -> str:
+        return self.product.title

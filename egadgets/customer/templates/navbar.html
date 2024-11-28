@@ -29,7 +29,7 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}"> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
@@ -52,11 +52,21 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{% url 'cartlist' %}">
                       <i class="fa-solid fa-cart-shopping" style="color: #030811;"></i>
+                      <span class="badge bg-dark p-1">{{cart}}</span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'orderlist' %}">
                       <i class="fa-solid fa-list" style="color: #02060d;"></i>
+                      <span class="badge bg-dark p-1">{{order}}</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">
+                      
+                      <button class="btn btn-outline-dark" >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout</button>
                     </a>
                   </li>
                 </ul>
