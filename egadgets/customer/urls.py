@@ -13,5 +13,6 @@ urlpatterns=[
     path('placeorder/<int:id>',placeorder,name='placeorder'),
     path('orderlist',OrderListView.as_view(),name='orderlist'),
     path('corder/<int:id>',CancelOrder,name='corder'),
+    path('search/',searchproduct,name='search'),
 
 ]
