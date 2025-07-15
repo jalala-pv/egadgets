@@ -9,10 +9,17 @@ class Products(models.Model):
     price=models.IntegerField()
     image=models.ImageField(upload_to='product_images')
     options=(
-        ('SmartPhone','SmartPhone'),
-        ('Tablet','Tablet'),
-        ('SmartWatch','SmartWatch'),
-        ('LapTop','Laptop'),
+     
+    ('SmartPhone', 'SmartPhone'),
+    ('Tablet', 'Tablet'),
+    ('SmartWatch', 'SmartWatch'),
+    ('LapTop', 'LapTop'),
+    ('Headphones', 'Headphones'),
+    ('Camera', 'Camera'),
+    ('GamingConsole', 'Gaming Console'),
+    ('Accessories', 'Accessories'),
+
+
     )
     category=models.CharField(max_length=100,choices=options)
     def __str__(self) -> str:
