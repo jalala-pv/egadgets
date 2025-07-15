@@ -33,10 +33,11 @@ class ProductListView(ListView):
     queryset = Products.objects.all()
     context_object_name = 'products'
 
-    def get_queryset(self):
-        cat = self.kwargs.get('cat')
-        self.request.session['category'] = cat
-        return self.queryset.filter(category=cat)
+    # In views.py
+    def all_products(request):
+        products = Products.objects.all()
+        return render(request, 'productlist.html', {'products': products})
+
 
 # Search Product
 def searchproduct(request):
